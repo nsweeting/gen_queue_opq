@@ -4,7 +4,6 @@ defmodule GenQueue.OPQAdapterTest do
   import GenQueue.OPQTestHelpers
 
   Application.put_env(:gen_queue_opq, GenQueue.OPQAdapterTest.Enqueuer, adapter: GenQueue.OPQAdapter)
-  Application.put_env(:ex_unit, :assert_receive_timeout, 3_000)
 
   defmodule Enqueuer do
     use GenQueue, otp_app: :gen_queue_opq

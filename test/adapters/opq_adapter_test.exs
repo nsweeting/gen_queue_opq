@@ -3,9 +3,9 @@ defmodule GenQueue.OPQAdapterTest do
 
   import GenQueue.OPQTestHelpers
 
-  Application.put_env(:gen_queue_opq, GenQueue.OPQAdapterTest.Enqueuer, adapter: GenQueue.OPQAdapter)
-
   defmodule Enqueuer do
+    Application.put_env(:gen_queue_opq, __MODULE__, adapter: GenQueue.OPQAdapter)
+
     use GenQueue, otp_app: :gen_queue_opq
   end
   

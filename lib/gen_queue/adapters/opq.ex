@@ -15,8 +15,12 @@ defmodule GenQueue.Adapters.OPQ do
     do_enqueue(gen_queue, module, [], opts)
   end
 
-  def handle_push(gen_queue, {module, args}, opts) do
+  def handle_push(gen_queue, {module, args}, opts) when is_list(args) do
     do_enqueue(gen_queue, module, args, opts)
+  end
+
+  def handle_push(gen_queue, {module, arg}, opts) do
+    do_enqueue(gen_queue, module, [arg], opts)
   end
 
   def build_opts_map(opts) do

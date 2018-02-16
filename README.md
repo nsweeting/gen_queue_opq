@@ -114,7 +114,7 @@ defmodule MyJobTest do
   end
 
   test "my enqueuer works" do
-    {:ok, _} = Enqueuer.push(Job)
+    {:ok, _} = Enqueuer.push(MyJob)
     assert_receive({Job, [], %{jid: _}})
   end
 end

@@ -1,27 +1,27 @@
-defmodule GenQueue.OPQAdapterTest do
+defmodule GenQueue.Adapters.OPQTest do
   use ExUnit.Case
 
+  import GenQueue.Test
   import GenQueue.OPQTestHelpers
 
   defmodule Enqueuer do
-    Application.put_env(:gen_queue_opq, __MODULE__, adapter: GenQueue.OPQAdapter)
+    Application.put_env(:gen_queue_opq, __MODULE__, adapter: GenQueue.Adapters.OPQ)
 
     use GenQueue, otp_app: :gen_queue_opq
   end
   
   defmodule Job do
     def perform do
-      send(:gen_queue_opq, :performed)
+      send_item(Enqueuer, :performed)
     end
   
     def perform(arg1) do
-      send(:gen_queue_opq, {:performed, arg1})
+      send_item(Enqueuer, {:performed, arg1})
     end
   end
 
   setup do
-    Process.register(self(), :gen_queue_opq)
-    :ok
+    setup_global_test_queue(Enqueuer, :gen_queue_opq)
   end
 
   describe "push/2" do

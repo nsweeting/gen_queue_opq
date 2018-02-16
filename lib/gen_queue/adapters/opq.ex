@@ -1,4 +1,4 @@
-defmodule GenQueue.OPQAdapter do
+defmodule GenQueue.Adapters.OPQ do
   use GenQueue.Adapter
 
   def start_link(gen_queue, opts \\ []) do

@@ -21,7 +21,7 @@ defmodule GenQueueOpq.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:gen_queue, "~> 0.1.3"},
+      {:gen_queue, git: "https://github.com/nsweeting/gen_queue.git"},
       {:opq, "~> 3.0", runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev},
     ]

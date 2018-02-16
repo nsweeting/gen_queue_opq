@@ -1,7 +1,7 @@
 %{
   "earmark": {:hex, :earmark, "1.2.4", "99b637c62a4d65a20a9fb674b8cffb8baa771c04605a80c911c4418c69b75439", [:mix], [], "hexpm"},
   "ex_doc": {:hex, :ex_doc, "0.18.3", "f4b0e4a2ec6f333dccf761838a4b253d75e11f714b85ae271c9ae361367897b7", [:mix], [{:earmark, "~> 1.1", [hex: :earmark, repo: "hexpm", optional: false]}], "hexpm"},
-  "gen_queue": {:git, "https://github.com/nsweeting/gen_queue.git", "89c63a1c4d9b7173cd0d1ea23dd8ca43f33292c0", []},
+  "gen_queue": {:hex, :gen_queue, "0.1.4", "6550ddb87290fb355b3824df5457166fa7ab419e0c37b8dbd41330fa2244ca59", [:mix], [], "hexpm"},
   "gen_stage": {:hex, :gen_stage, "0.13.1", "edff5bca9cab22c5d03a834062515e6a1aeeb7665fb44eddae086252e39c4378", [:mix], [], "hexpm"},
   "opq": {:hex, :opq, "3.0.1", "31298fb57140bedb2949b75996c411cd9cec6ba89f33b1f8c4f656b6f8719b38", [:mix], [{:gen_stage, "~> 0.12", [hex: :gen_stage, repo: "hexpm", optional: false]}], "hexpm"},
 }

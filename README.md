@@ -1,4 +1,5 @@
 # GenQueue OPQ
+[![Build Status](https://travis-ci.org/nsweeting/gen_queue_opq.svg?branch=master)](https://travis-ci.org/nsweeting/gen_queue_opq)
 [![GenQueue OPQ Version](https://img.shields.io/hexpm/v/gen_queue_opq.svg)](https://hex.pm/packages/gen_queue_opq)
 
 This is an adapter for [GenQueue](https://github.com/nsweeting/gen_queue) to enable

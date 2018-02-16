@@ -28,7 +28,7 @@ for details on configuration. This adapter handles zero `OPQ` related config.
 ## Creating Enqueuers
 
 We can start off by creating a new `GenQueue` module, which we will use to push jobs to
-Exq.
+OPQ.
 
 ```elixir
 defmodule Enqueuer do
@@ -101,7 +101,7 @@ config :my_app, Enqueuer, [
 
 This mock adapter uses the standard `GenQueue.Test` helpers to send the job payload
 back to the current processes mailbox (or another named process) instead of actually
-enqueuing the job to redis.
+enqueuing the job to OPQ.
 
 ```elixir
 defmodule MyJobTest do

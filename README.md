@@ -12,7 +12,7 @@ The package can be installed by adding `gen_queue_opq` to your list of dependenc
 ```elixir
 def deps do
   [
-    {:gen_queue_opq, "~> 0.1.0"}
+    {:gen_queue_opq, "~> 0.1.1"}
   ]
 end
 ```

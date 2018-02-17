@@ -52,7 +52,7 @@ defmodule GenQueueOpq.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:gen_queue, "~> 0.1.4"},
+      {:gen_queue, "~> 0.1.5"},
       {:opq, "~> 3.0", runtime: false},
       {:ex_doc, ">= 0.0.0", only: :dev}
     ]

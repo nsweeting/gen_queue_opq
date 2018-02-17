@@ -92,11 +92,11 @@ We can now easily enqueue jobs to `OPQ`. The adapter will handle a variety of ar
 
 ## Testing
 
-Optionally, we can also have our tests use the `GenQueue.Adapters.OPQMock` adapter.
+Optionally, we can also have our tests use the `GenQueue.Adapters.MockJob` adapter.
 
 ```elixir
 config :my_app, Enqueuer, [
-  adapter: GenQueue.Adapters.OPQMock
+  adapter: GenQueue.Adapters.MockJob
 ]
 ```
 
@@ -116,7 +116,7 @@ defmodule MyJobTest do
 
   test "my enqueuer works" do
     {:ok, _} = Enqueuer.push(MyJob)
-    assert_receive({Job, [], %{}})
+    assert_receive(%GenQueue.Job{module: MyJob, args: []})
   end
 end
 ```

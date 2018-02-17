@@ -29,7 +29,7 @@ defmodule GenQueue.Adapters.OPQTest do
       {:ok, pid} = Enqueuer.start_link()
       {:ok, job} = Enqueuer.push(Job)
       assert_receive(:performed)
-      assert {Job, [], %{}} = job
+      assert %GenQueue.Job{module: Job, args: []} = job
       stop_process(pid)
     end
 
@@ -37,7 +37,7 @@ defmodule GenQueue.Adapters.OPQTest do
       {:ok, pid} = Enqueuer.start_link()
       {:ok, job} = Enqueuer.push({Job})
       assert_receive(:performed)
-      assert {Job, [], %{}} = job
+      assert %GenQueue.Job{module: Job, args: []} = job
       stop_process(pid)
     end
 
@@ -45,7 +45,7 @@ defmodule GenQueue.Adapters.OPQTest do
       {:ok, pid} = Enqueuer.start_link()
       {:ok, job} = Enqueuer.push({Job, ["foo"]})
       assert_receive({:performed, "foo"})
-      assert {Job, ["foo"], %{}} = job
+      assert %GenQueue.Job{module: Job, args: ["foo"]} = job
       stop_process(pid)
     end
   end
